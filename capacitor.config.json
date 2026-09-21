@@ -1,0 +1,9 @@
+{
+  "appId": "com.safevoice.app",
+  "appName": "SafeVoice",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "_readme": "Starter keyword list for v2 live-call scam detection. Native-speaker review strongly recommended for ta/te/ml/kn before relying on this — safety-critical accuracy matters more than coverage. 'universal' terms are checked regardless of selected language, since scam calls in India are heavily code-mixed with English loanwords.",
+  "universal": [
+    "otp", "one time password", "digital arrest", "cbi", "anydesk",
+    "kyc", "aadhar", "customs department", "income tax department",
+    "processing fee", "gift card", "screen share", "do not disconnect"
+  ],
+  "en": [
+    "digital arrest", "share the code", "your account will be blocked",
+    "arrest warrant", "police case", "illegal parcel", "install anydesk",
+    "share your screen", "refund", "lottery", "your kyc will expire",
+    "electricity connection will be disconnected", "do not tell anyone",
+    "keep this confidential", "pay immediately", "verification code"
+  ],
+  "hi": [
+    "डिजिटल अरेस्ट", "ओटीपी मत बताइए", "आपका खाता बंद हो जाएगा",
+    "गिरफ्तारी वारंट", "पुलिस केस", "अवैध पार्सल", "एनीडेस्क इंस्टॉल करें",
+    "अपनी स्क्रीन शेयर करें", "रिफंड", "लॉटरी", "केवाईसी खत्म हो जाएगी",
+    "बिजली कनेक्शन काट दिया जाएगा", "किसी को मत बताना",
+    "इसे गुप्त रखें", "तुरंत भुगतान करें", "सत्यापन कोड"
+  ],
+  "ta": [
+    "டிஜிட்டல் கைது", "ஓடிபி சொல்ல வேண்டாம்", "உங்கள் கணக்கு முடக்கப்படும்",
+    "கைது வாரண்ட்", "போலீஸ் வழக்கு", "சட்டவிரோத பார்சல்",
+    "உங்கள் திரையை பகிரவும்", "பணம் திரும்பப்பெறுதல்", "லாட்டரி",
+    "கேஒய்சி காலாவதியாகும்", "மின் இணைப்பு துண்டிக்கப்படும்",
+    "யாரிடமும் சொல்ல வேண்டாம்", "இதை ரகசியமாக வைத்திருங்கள்",
+    "உடனடியாக பணம் செலுத்துங்கள்"
+  ],
+  "te": [
+    "డిజిటల్ అరెస్ట్", "ఓటీపీ చెప్పవద్దు", "మీ ఖాతా బ్లాక్ అవుతుంది",
+    "అరెస్ట్ వారెంట్", "పోలీస్ కేసు", "అక్రమ పార్సెల్",
+    "మీ స్క్రీన్ షేర్ చేయండి", "రీఫండ్", "లాటరీ",
+    "కేవైసీ ముగిసిపోతుంది", "విద్యుత్ కనెక్షన్ తీసివేయబడుతుంది",
+    "ఎవరికీ చెప్పవద్దు", "దీన్ని రహస్యంగా ఉంచండి",
+    "వెంటనే చెల్లించండి"
+  ],
+  "ml": [
+    "ഡിജിറ്റൽ അറസ്റ്റ്", "ഒടിപി പറയരുത്", "നിങ്ങളുടെ അക്കൗണ്ട് ബ്ലോക്ക് ആകും",
+    "അറസ്റ്റ് വാറണ്ട്", "പോലീസ് കേസ്", "നിയമവിരുദ്ധ പാഴ്സൽ",
+    "നിങ്ങളുടെ സ്ക്രീൻ ഷെയർ ചെയ്യുക", "റീഫണ്ട്", "ലോട്ടറി",
+    "കെവൈസി കാലഹരണപ്പെടും", "വൈദ്യുതി കണക്ഷൻ വിച്ഛേദിക്കും",
+    "ആരോടും പറയരുത്", "ഇത് രഹസ്യമായി സൂക്ഷിക്കുക",
+    "ഉടൻ പണം അടയ്ക്കുക"
+  ],
+  "kn": [
+    "ಡಿಜಿಟಲ್ ಅರೆಸ್ಟ್", "ಒಟಿಪಿ ಹೇಳಬೇಡಿ", "ನಿಮ್ಮ ಖಾತೆ ಬ್ಲಾಕ್ ಆಗುತ್ತದೆ",
+    "ಬಂಧನ ವಾರಂಟ್", "ಪೊಲೀಸ್ ಕೇಸ್", "ಅಕ್ರಮ ಪಾರ್ಸೆಲ್",
+    "ನಿಮ್ಮ ಸ್ಕ್ರೀನ್ ಶೇರ್ ಮಾಡಿ", "ರೀಫಂಡ್", "ಲಾಟರಿ",
+    "ಕೆವೈಸಿ ಮುಗಿಯುತ್ತದೆ", "ವಿದ್ಯುತ್ ಸಂಪರ್ಕ ಕಡಿತಗೊಳ್ಳುತ್ತದೆ",
+    "ಯಾರಿಗೂ ಹೇಳಬೇಡಿ", "ಇದನ್ನು ರಹಸ್ಯವಾಗಿಡಿ",
+    "ತಕ್ಷಣ ಪಾವತಿಸಿ"
+  ]
+}

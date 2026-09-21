@@ -1,0 +1,6 @@
+{
+  "_readme": "Populate this with real reported scam numbers before shipping. Do NOT ship with fabricated numbers. Good sources: India's National Cyber Crime Reporting Portal (cybercrime.gov.in) bulk data if available, TRAI DND complaint categories, community-sourced lists you personally vet, or numbers your own users report in-app. 'exactNumbers' matches a full number exactly. 'prefixPatterns' matches the start of a number (e.g. a known fraudulent call-center range). Keep this file small and high-confidence rather than large and noisy — false positives erode trust fast with elderly users.",
+  "lastUpdated": "2026-09-15",
+  "exactNumbers": [],
+  "prefixPatterns": []
+}
