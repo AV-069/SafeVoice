@@ -4,25 +4,8 @@ Offline, privacy-first scam-call warning app for senior citizens. v1 detects
 calls from a locally bundled blocklist and shows a full-screen warning. No
 audio, no cloud, no network calls.
 
-## What changed from the old build
 
-- The old `CallReceiver` had no detection logic at all — it just opened the
-  app. This version actually checks the incoming number against
-  `android/app/src/main/assets/scam_numbers.json` and, on a match, shows a
-  native full-screen warning (`ScamWarningActivity`) that works even if the
-  app was killed.
-- The old bridge call used `getBridge().eval(...)` with string-concatenated
-  JS — fragile and deprecated. This version uses Capacitor's
-  `Bridge.triggerJSEvent(...)`, the supported way to fire window events into
-  the web layer.
-- The old manifest declared permissions but never requested them at runtime.
-  `MainActivity` now requests `READ_PHONE_STATE` / `POST_NOTIFICATIONS` at
-  startup and sends the user to the overlay-permission settings screen if
-  needed, then reports live status back to the React dashboard.
-- `CallReceiver` now also handles `EXTRA_STATE_IDLE`, not just `RINGING`, so
-  the dashboard doesn't get stuck showing "call in progress" forever.
-
-## Setup — this matters, read before building
+## Setup — read before building
 
 This repo ships the **custom app-level pieces** (manifest additions, Java
 classes, layout, blocklist asset). It does **not** ship a hand-written Gradle
