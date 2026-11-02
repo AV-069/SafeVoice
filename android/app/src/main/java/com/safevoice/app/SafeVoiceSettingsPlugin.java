@@ -1,7 +1,13 @@
 package com.safevoice.app;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.provider.Settings;
+
+import androidx.core.content.ContextCompat;
 
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
@@ -63,6 +69,38 @@ public class SafeVoiceSettingsPlugin extends Plugin {
 
         JSObject ret = new JSObject();
         ret.put("number", number);
+        call.resolve(ret);
+    }
+
+    /**
+     * Pull-based permission check, used on React mount so the dashboard
+     * doesn't depend on catching the "permissionsUpdated" event that
+     * MainActivity fires — that event can be dispatched before the
+     * WebView has finished loading and attaching its listener, especially
+     * on a cold start, so it's effectively a coin flip whether React ever
+     * sees it. This gives the same five values on demand instead.
+     */
+    @PluginMethod
+    public void getPermissionStatus(PluginCall call) {
+        Context context = getContext();
+
+        boolean phoneStateGranted = ContextCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE)
+                == PackageManager.PERMISSION_GRANTED;
+        boolean notificationsGranted = Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU
+                || ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS)
+                == PackageManager.PERMISSION_GRANTED;
+        boolean overlayGranted = Settings.canDrawOverlays(context);
+        boolean microphoneGranted = ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO)
+                == PackageManager.PERMISSION_GRANTED;
+        boolean smsGranted = ContextCompat.checkSelfPermission(context, Manifest.permission.SEND_SMS)
+                == PackageManager.PERMISSION_GRANTED;
+
+        JSObject ret = new JSObject();
+        ret.put("phoneState", phoneStateGranted ? "granted" : "denied");
+        ret.put("notifications", notificationsGranted ? "granted" : "denied");
+        ret.put("overlay", overlayGranted ? "granted" : "denied");
+        ret.put("microphone", microphoneGranted ? "granted" : "denied");
+        ret.put("sms", smsGranted ? "granted" : "denied");
         call.resolve(ret);
     }
 }

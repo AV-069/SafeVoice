@@ -81,6 +81,20 @@ function App() {
       });
   }, []);
 
+  // Pull the real permission state once on mount. The native side also
+  // pushes a "permissionsUpdated" event (below), but that push can fire
+  // before this component has mounted and attached its listener — on a
+  // cold start the JS bundle can take longer to load than the native
+  // emit delay, so the event gets dropped and the dashboard is stuck on
+  // "unknown". This pull guarantees correct values regardless of timing.
+  useEffect(() => {
+    SafeVoiceSettings.getPermissionStatus()
+      .then((status) => {
+        setPermissions((prev) => ({ ...prev, ...status }));
+      })
+      .catch(() => {});
+  }, []);
+
   useEffect(() => {
     const handleIncomingCall = (event) => {
       const { number, verdict } = event.detail || {};
