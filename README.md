@@ -81,17 +81,3 @@ block) instead of listing every individual number.
 - **Windows file locks on `app/build`** — run `.\gradlew --stop` first, and
   avoid `clean` if OneDrive or another sync tool is watching the folder.
 
-## Roadmap: v2 (on-device audio detection)
-
-Not built yet — deliberately scoped out of v1 so you have something working
-and installable first. When you're ready:
-
-- Requires the user to enable speakerphone (Android does not allow
-  third-party apps to tap the actual call-audio stream — Google closed that
-  off for all non-default-dialer apps in 2022).
-- Mic audio (already-declared `RECORD_AUDIO` permission) → on-device speech
-  recognition (Android's offline `SpeechRecognizer`, or a bundled tiny
-  Vosk/Whisper model for full offline reliability) → keyword/pattern engine
-  for phrases like "digital arrest," "OTP," "account frozen."
-- Keep everything on-device — no audio leaves the phone, consistent with the
-  original privacy-first philosophy.
